@@ -10,7 +10,8 @@ REDITS - A React + Vite + Hono + Cloudflare Workers application that provides a 
 
 ### Frontend (React + Vite)
 - **Entry Point**: `src/react-app/main.tsx`
-- **Main Component**: `src/react-app/App.tsx` - Contains welcome message
+- **Main Component**: `src/react-app/App.tsx` - Contains welcome message with REDITS branding (white text on red #f01414 background)
+- **Favicon**: `public/favicon.svg` - White "ITS" text on red background (#f01414), vertically stretched
 - **Build Output**: `dist/client/` (static assets served by Cloudflare Workers)
 - **Development Server**: Runs on port 5173 with HMR enabled
 - **Hot Reload Configuration**: Uses polling for WSL environments (`vite.config.ts` has `usePolling: true`)
@@ -24,8 +25,8 @@ REDITS - A React + Vite + Hono + Cloudflare Workers application that provides a 
 - **Compatibility**: Node.js compatibility enabled
 
 ### Configuration Files
-- **Vite Config**: `vite.config.ts` - Uses Cloudflare Vite plugin, polling enabled for WSL
-- **Wrangler Config**: `wrangler.json` - Cloudflare Workers deployment, SPA routing enabled
+- **Vite Config**: `vite.config.ts` - Production optimizations with Terser minification, compression plugins (gzip/brotli), and obfuscation
+- **Wrangler Config**: `wrangler.json` - Cloudflare Workers deployment, SPA routing enabled, source maps disabled for production
 - **TypeScript Configs**: 
   - `tsconfig.json` - Base configuration
   - `tsconfig.app.json` - React app configuration
@@ -102,10 +103,19 @@ No test framework is currently configured. To add testing:
 - **Vite**: ^6.0.0 - Build tool and dev server
 - **TypeScript**: 5.8.3 - Type safety
 - **Wrangler**: 4.21.x - Cloudflare Workers CLI
+- **Terser**: ^5.43.1 - JavaScript minification and obfuscation
+- **vite-plugin-compression**: ^0.5.1 - Asset compression (gzip/brotli)
 
 ### Key Features
 - Observability enabled for monitoring deployed workers
-- Source maps uploaded for debugging
+- Source maps disabled in production for security (upload_source_maps: false)
 - ESLint configured for code quality (v9 with React hooks and refresh plugins)
 - React Fast Refresh for optimal development experience
 - TypeScript strict mode enabled across all configurations
+- Claude Code permissions configured in `.claude/settings.local.json` for automated git and npm operations
+
+### Production Build Optimizations
+- **Minification**: Terser with aggressive settings (removes console logs, debugger statements)
+- **Compression**: Automatic gzip and brotli compression of assets
+- **Obfuscation**: Hashed filenames, mangled variable names, no comments
+- **Bundle Size**: ~177KB uncompressed → ~49KB brotli compressed
