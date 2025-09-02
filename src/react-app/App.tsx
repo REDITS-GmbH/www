@@ -5,7 +5,12 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Say hello to REDITS!</h1>
+      <h1 style={{ 
+        color: 'white', 
+        backgroundColor: '#f01414',
+        padding: '1rem 2rem',
+        display: 'inline-block'
+      }}>Say hello to REDITS!</h1>
     </>
   );
 }
