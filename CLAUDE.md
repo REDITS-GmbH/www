@@ -10,8 +10,8 @@ REDITS - A React + Vite + Hono + Cloudflare Workers application that provides a 
 
 ### Frontend (React + Vite)
 - **Entry Point**: `src/react-app/main.tsx`
-- **Main Component**: `src/react-app/App.tsx` - Contains welcome message with REDITS branding (white text on red #f01414 background)
-- **Favicon**: `public/favicon.svg` - White "ITS" text on red background (#f01414), vertically stretched
+- **Main Component**: `src/react-app/App.tsx` - Contains welcome message with REDITS branding (white text on red #f01414 background with 10px border radius)
+- **Favicon**: `public/favicon.svg` - White "ITS" text on red background (#f01414) with rounded corners (7.5px radius), vertically stretched (1.4x)
 - **Build Output**: `dist/client/` (static assets served by Cloudflare Workers)
 - **Development Server**: Runs on port 5173 with HMR enabled
 - **Hot Reload Configuration**: Uses polling for WSL environments (`vite.config.ts` has `usePolling: true`)

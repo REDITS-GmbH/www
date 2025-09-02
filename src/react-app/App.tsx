@@ -9,7 +9,8 @@ function App() {
         color: 'white', 
         backgroundColor: '#f01414',
         padding: '1rem 2rem',
-        display: 'inline-block'
+        display: 'inline-block',
+        borderRadius: '10px'
       }}>Say hello to REDITS!</h1>
     </>
   );
