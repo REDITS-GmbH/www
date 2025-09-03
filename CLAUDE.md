@@ -10,11 +10,13 @@ REDITS - A React + Vite + Hono + Cloudflare Workers application that provides a 
 
 ### Frontend (React + Vite)
 - **Entry Point**: `src/react-app/main.tsx`
-- **Main Component**: `src/react-app/App.tsx` - Contains welcome message with REDITS branding (white text on red #f01414 background with 10px border radius)
+- **Main Component**: `src/react-app/App.tsx` - Wrapper component that renders LandingPage
+- **Landing Page**: `src/react-app/LandingPage.tsx` - Company landing page with REDITS branding, contact info, and GDPR-compliant privacy policy
 - **Favicon**: `public/favicon.svg` - White "ITS" text on red background (#f01414) with rounded corners (7.5px radius), vertically stretched (1.4x)
 - **Build Output**: `dist/client/` (static assets served by Cloudflare Workers)
 - **Development Server**: Runs on port 5173 with HMR enabled
 - **Hot Reload Configuration**: Uses polling for WSL environments (`vite.config.ts` has `usePolling: true`)
+- **Font**: Self-hosted Roboto font (`public/roboto-latin-v30.woff2`) for GDPR compliance
 
 ### Backend (Hono + Cloudflare Workers)
 - **Entry Point**: `src/worker/index.ts`
@@ -118,4 +120,4 @@ No test framework is currently configured. To add testing:
 - **Minification**: Terser with aggressive settings (removes console logs, debugger statements)
 - **Compression**: Automatic gzip and brotli compression of assets
 - **Obfuscation**: Hashed filenames, mangled variable names, no comments
-- **Bundle Size**: ~177KB uncompressed → ~49KB brotli compressed
+- **Bundle Size**: Optimized for edge deployment with dual compression
