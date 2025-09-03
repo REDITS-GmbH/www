@@ -7,7 +7,11 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(npm run build:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Read(/mnt/c/Projects/company-sites/**)",
+      "Read(/mnt/c/Projects/company-sites/docs/**)",
+      "Read(/mnt/c/Projects/company-sites/**)",
+      "Read(/mnt/c/Projects/company-sites/**)"
     ],
     "deny": [],
     "ask": []
