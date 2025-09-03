@@ -11,7 +11,9 @@
       "Read(/mnt/c/Projects/company-sites/**)",
       "Read(/mnt/c/Projects/company-sites/docs/**)",
       "Read(/mnt/c/Projects/company-sites/**)",
-      "Read(/mnt/c/Projects/company-sites/**)"
+      "Read(/mnt/c/Projects/company-sites/**)",
+      "Read(/mnt/c/Projects/company-sites/**)",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []
